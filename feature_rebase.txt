@@ -1,1 +1,2 @@
 Rebase line 1
+Rebase line 2
