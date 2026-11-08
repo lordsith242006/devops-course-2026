@@ -8,7 +8,7 @@ REMOTE_DIR="/var/www/devops-site"
 SITE_URL="https://devops.local"
 CA_CERT="${HOME}/devops.crt"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/$(git -C "$SCRIPT_DIR" rev-parse --show-cdup)" && pwd)"
 LOCAL_DIR="${REPO_ROOT}/PR6/site/"
 
 die() { echo "deploy: $*" >&2; exit 1; }
